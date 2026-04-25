@@ -1,4 +1,4 @@
-# Unix-Shell-C
+# 🖥️ Unix-Shell-C
 
 A Unix-like shell implemented in C featuring built-in commands, pipes, background execution, process management, and integrated TCP networking support.
 
