@@ -26,8 +26,11 @@ The goal of the project was to recreate core Linux shell behavior using low-leve
 
 The shell is designed around core systems programming concepts, including input parsing, command execution, process control, and networking.
 User input is read through the interactive prompt (`mysh$`) and tokenized to determine whether the command should be handled as a builtin, executed using `/bin` or `/usr/bin`, or processed as a pipe or background task.
+
 The shell supports variable expansion and command parsing before execution, allowing commands to be dynamically resolved while maintaining safe memory handling and token limits. Assignment statements, expanded commands, and builtin detection are handled before execution begins.
+
 Process execution is managed using `fork()`, `exec()`, `waitpid()`, and `dup2()`. Builtins that must affect shell state, such as `cd`, `start-server`, and `close-server`, run directly inside the shell process, while others execute in child processes. Pipe detection supports chaining commands using `|`, and background execution using `&` allows long-running processes to continue without blocking the shell.
+
 Special care was taken with signal handling, particularly `SIGINT`. Pressing `Ctrl+C` never terminates the shell itself, but foreground child processes and builtins should still terminate normally. This mirrors standard Unix shell behavior while preserving shell stability.
 
 ---
