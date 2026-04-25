@@ -194,6 +194,7 @@ mysh$ start-server 9000
 
 Starts a non-blocking background chat server.
 
+---
 
 ### Start Client
 
@@ -205,6 +206,7 @@ mysh$ start-client 9000 127.0.0.1
 
 The client stays connected and can continue sending messages.
 
+---
 
 ### Check Connected Clients
 
@@ -222,6 +224,7 @@ Example output:
 
 Displays the number of currently connected clients.
 
+---
 
 ### Send One-Time Message
 
@@ -234,12 +237,15 @@ This broadcasts the message to:
 * the server terminal
 * all connected clients
 
+---
 
 ### Close Server
 
 ```bash
 mysh$ close-server
 ```
+
+---
 
 Terminates the active server and cleans up remaining processes.
 
