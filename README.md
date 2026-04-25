@@ -245,8 +245,6 @@ This broadcasts the message to:
 mysh$ close-server
 ```
 
----
-
 Terminates the active server and cleans up remaining processes.
 
 ---
